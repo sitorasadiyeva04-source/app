@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Иконки FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="app-card">
+        <header class="app-header">
+            <h1>Translate App</h1>
+        </header>
+
+        <!-- Блок ввода текста -->
+        <section class="translation-box" id="inputBox">
+            <textarea id="inputText" placeholder="Введите текст..."></textarea>
+            <div class="box-footer">
+                <select id="inputLang"></select>
+                <div class="actions">
+                    <button class="icon-btn speak-btn" data-target="inputText" title="Прослушать">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Главная кнопка действия -->
+        <button id="translateBtn" class="translate-btn">
+            <span>Tarjima qilish</span>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </button>
+
+        <!-- Блок результата перевода -->
+        <section class="translation-box" id="outputBox">
+            <textarea id="outputText" placeholder="Перевод появится здесь..." readonly></textarea>
+            <div class="box-footer">
+                <select id="outputLang"></select>
+                <div class="actions">
+                    <button class="icon-btn speak-btn" data-target="outputText" title="Прослушать">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <button class="icon-btn copy-btn" id="copyBtn" title="Копировать">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

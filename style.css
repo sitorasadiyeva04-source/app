@@ -1,0 +1,189 @@
+:root {
+    --bg-gradient: radial-gradient(circle at top left, #1e0b36, #0d0418);
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --box-bg: rgba(15, 23, 42, 0.65);
+    --box-border: rgba(255, 255, 255, 0.08);
+    --box-focus: #c084fc;
+    --accent-gradient: linear-gradient(135deg, #a855f7, #7e22ce);
+    --accent-hover: linear-gradient(135deg, #c084fc, #9333ea);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --radius-lg: 24px;
+    --radius-md: 14px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-main);
+}
+
+.app-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--card-border);
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+                0 0 50px rgba(168, 85, 247, 0.15);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-header h1 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff 20%, #d8b4fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.translation-box {
+    background: var(--box-bg);
+    border: 1px solid var(--box-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: var(--transition);
+}
+
+.translation-box:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.translation-box:focus-within {
+    border-color: var(--box-focus);
+    box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.15),
+                0 0 20px rgba(192, 132, 252, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 90px;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-main);
+    outline: none;
+}
+
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 10px;
+    margin-top: 6px;
+}
+
+select {
+    border: none;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #e2e8f0;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+select:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+select option {
+    background: #18092b;
+    color: var(--text-main);
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: #d8b4fe;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.icon-btn:hover {
+    background: var(--box-focus);
+    color: #0d0418;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.4);
+}
+
+.translate-btn {
+    width: 100%;
+    background: var(--accent-gradient);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+    transition: var(--transition);
+}
+
+.translate-btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 6px 25px rgba(192, 132, 252, 0.6);
+    transform: translateY(-2px);
+}
+
+.translate-btn:active {
+    transform: translateY(1px);
+}
